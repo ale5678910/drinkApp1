@@ -42,6 +42,7 @@ class DrinkDetailActivity : AppCompatActivity() {
             adapter = adapt
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL,false)
         }
+        //bmdnbmasbdmabmdbma
 
         binding.buttonBack.setOnClickListener {
             this.finish()

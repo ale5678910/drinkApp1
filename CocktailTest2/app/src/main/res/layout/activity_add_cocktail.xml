@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Screen.AddCocktailActivity">
+
+    <ImageView
+        android:id="@+id/buttonBack"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/back"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/buttonCreateCocktail"
+        app:layout_constraintTop_toBottomOf="@+id/buttonBack" >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Create your cocktail"
+                android:textColor="@color/md_theme_light_primary"
+                android:textSize="28sp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/titleTextInputLayout"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:hint="Cocktail name"
+                app:boxStrokeColor="@color/md_theme_light_primary"
+                app:errorEnabled="true"
+                app:helperTextEnabled="true"
+                app:errorTextColor="@color/md_theme_light_error"
+                app:boxStrokeWidth="2dp"
+                android:layout_marginTop="20sp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/imputCoctailName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/categoryTextInputLayout"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:hint="Cocktail category"
+                app:boxStrokeColor="@color/md_theme_light_primary"
+                app:boxStrokeWidth="2dp"
+                app:helperTextEnabled="true"
+                app:errorEnabled="true"
+                android:layout_marginTop="10sp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/imputCoctailCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/instructionTextInputLayout"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:hint="Cocktail instruction"
+                app:boxStrokeColor="@color/md_theme_light_primary"
+                app:boxStrokeWidth="2dp"
+                app:helperTextEnabled="true"
+                app:errorEnabled="true"
+                android:layout_marginTop="10sp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/imputCoctailInstruction"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                app:boxStrokeWidth="2dp"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:hint="Language"
+                android:layout_marginTop="10sp"
+                android:id="@+id/dropdown_menu">
+
+                <AutoCompleteTextView
+                    android:id="@+id/dropdown_menu2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="none"
+                    app:simpleItems="@array/simple_items"
+                    tools:ignore="LabelFor" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:layout_marginTop="20sp"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Alcoholic"
+                    android:textSize="22sp"
+                    android:layout_weight="4"/>
+                <CheckBox
+                    android:id="@+id/checkboxAlcoholic"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/listIngredient"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <ImageView
+                        android:id="@+id/buttonAddIngredient"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:src="@drawable/baseline_add_24"
+                        app:tint="@color/md_theme_light_primary" />
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/buttonCreateCocktail"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:text="Create"
+        android:textSize="22sp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

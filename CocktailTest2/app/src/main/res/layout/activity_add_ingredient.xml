@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Screen.AddIngredientActivity"
+    android:orientation="vertical"
+    android:gravity="center">
+    <ImageView
+        android:id="@+id/buttonBack"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/back"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/titleScreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create your ingredient"
+        android:textColor="@color/md_theme_light_primary"
+        android:textSize="26sp"
+        android:layout_marginTop="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonBack" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/nameIngredientTextInputLayout"
+        android:layout_width="320dp"
+        android:layout_height="56dp"
+        android:hint="Ingredient name"
+        app:boxStrokeColor="@color/md_theme_light_primary"
+        app:boxStrokeWidth="2dp"
+        app:errorEnabled="true"
+        app:helperTextEnabled="true"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleScreen">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/imputIngredientName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/measureIngredientTextInputLayout"
+        android:layout_width="320dp"
+        android:layout_height="56dp"
+        android:hint="Ingredient measure"
+        app:boxStrokeColor="@color/md_theme_light_primary"
+        app:boxStrokeWidth="2dp"
+        app:errorEnabled="true"
+        app:helperTextEnabled="true"
+        android:layout_marginTop="60dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameIngredientTextInputLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/imputIngredientMeasure"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/buttonAddIngredient"
+        android:layout_width="320dp"
+        android:layout_height="56dp"
+        android:text="Add your ingredient"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/measureIngredientTextInputLayout" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
